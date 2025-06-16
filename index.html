@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Task Manager</h1>
+      <div class="task-controls">
+        <input type="text" id="taskInput" placeholder="Введите новую задачу...">
+        <select id="taskType">
+          <option value="default">Обычная</option>
+          <option value="important">Важная</option>
+          <option value="urgent">Срочная</option>
+        </select>
+        <button id="addTask">Добавить</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="task-filters">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="new">Новые</button>
+        <button class="filter-btn" data-filter="in-progress">В процессе</button>
+        <button class="filter-btn" data-filter="completed">Завершенные</button>
+        <button id="undoBtn" class="undo-btn">Отменить</button>
+      </div>
+
+      <div id="taskList" class="task-list">
+        <!-- Задачи будут добавляться здесь динамически -->
+      </div>
+    </main>
+  </div>
+
+  <script src="src/js/TaskObserver.js"></script>
+  <script src="src/js/TaskState.js"></script>
+  <script src="src/js/Task.js"></script>
+  <script src="src/js/TaskFactory.js"></script>
+  <script src="src/js/TaskCommand.js"></script>
+  <script src="src/js/DeadlineDecorator.js"></script>
+  <script src="src/js/TaskManager.js"></script>
+</body>
+
+</html>
